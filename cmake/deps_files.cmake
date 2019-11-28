@@ -40,7 +40,8 @@ set(DEPS_SRC_FILES_LINUX
     ${CMAKE_CURRENT_SOURCE_DIR}/src/deps/glfw/posix_time.c
     ${CMAKE_CURRENT_SOURCE_DIR}/src/deps/glfw/posix_thread.c
     ${CMAKE_CURRENT_SOURCE_DIR}/src/deps/glfw/linux_joystick.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/deps/glfw/xkb_unicode.c)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/deps/glfw/xkb_unicode.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/deps/glfw/osmesa_context.c)
 
 #MacOS Dependency Files
 set(DEPS_SRC_FILES_MACOS
