@@ -53,4 +53,6 @@ set(DEPS_SRC_FILES_MACOS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/deps/glfw/posix_thread.c
     ${CMAKE_CURRENT_SOURCE_DIR}/src/deps/glfw/cocoa_joystick.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/deps/glfw/cocoa_platform.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/deps/glfw/cocoa_time.c)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/deps/glfw/cocoa_time.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/deps/glfw/egl_context.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/deps/glfw/osmesa_context.c)
