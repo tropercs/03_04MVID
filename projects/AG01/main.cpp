@@ -39,7 +39,7 @@ int main(int argc, char* argv[]) {
 
     glfwMakeContextCurrent(window);
 
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+    if (!gladLoadGL()) {
         std::cout << "Error Initializing GLAD" << std::endl;
         glfwTerminate();
         return -1;
@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
 
     glfwSetFramebufferSizeCallback(window, onChangeFrameBufferSize);
 
-    glClearColor(0.5f, 0.5f, 0.0f, 1.0f);
+    glClearColor(0.0f, 0.3f, 0.6f, 1.0f);
 
     while(!glfwWindowShouldClose(window)) {
         handleInput(window);
