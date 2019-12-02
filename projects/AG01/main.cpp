@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cstdint>
 
-void onChangeFrameBufferSize(GLFWwindow* window, const int32_t width, const int32_t height) {
+void onChangeFrameBufferSize(GLFWwindow*, const int32_t width, const int32_t height) noexcept {
     glViewport(0, 0, width, height);
     std::cout << width << " " << height << std::endl;
 }
@@ -20,7 +20,7 @@ void render() {
 }
 
 
-int main(int argc, char* argv[]) {
+int main(int, char*[]) {
     if (!glfwInit()) {
         std::cout << "Error Initializing GLFW" << std::endl;
         return -1;
