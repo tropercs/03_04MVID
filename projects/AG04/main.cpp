@@ -116,8 +116,6 @@ int main(int, char* []) {
     uint32_t tex1 = createTexture("../assets/textures/bricks_arrow.jpg");
     uint32_t tex2 = createTexture("../assets/textures/blue_blocks.jpg");
 
-    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
 
