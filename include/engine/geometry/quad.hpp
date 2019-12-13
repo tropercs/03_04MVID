@@ -1,20 +1,15 @@
 #ifndef __QUAD_H__
 #define __QUAD_H__ 1
 
-#include "engine/geometry/geometry.hpp"
+#include "geometry.hpp"
 
-//0 posiciones
-//1 uvs
-//2 normales
+class Quad final: public Geometry {
+    public:
+        Quad() = delete;
+        explicit Quad(float size);
 
-class Quad: public Geometry {
-public:
-    Quad() = delete;
-    explicit Quad(float size);
-
-    void render() const override;
-protected:
-    float _size;
+    protected:
+        float _size;
 
 };
 #endif
