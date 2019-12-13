@@ -35,7 +35,7 @@ class Texture {
         Texture& operator=(const Texture&) = default;
         Texture& operator=(Texture&&) = default;
 
-        void activate(const Shader& shader, const char* name, uint32_t unit = 0) const;
+        void use(const Shader& shader, const char* name, uint32_t unit = 0) const;
 
         void setWrap(Wrap s, Wrap t);
         void setFilter(Filter mag, Filter min, Filter mipMapMag = Filter::None, Filter mipMapMin = Filter::None);

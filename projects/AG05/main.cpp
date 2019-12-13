@@ -21,8 +21,8 @@ void render(const Geometry& geom, const Shader& shader, Texture& tex1, Texture& 
 
     shader.use();
 
-    tex1.activate(shader, "tex_1", 0);
-    tex2.activate(shader, "tex_2", 1);
+    tex1.use(shader, "tex_1", 0);
+    tex2.use(shader, "tex_2", 1);
 
     geom.render();
 }

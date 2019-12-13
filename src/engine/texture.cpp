@@ -88,7 +88,7 @@ void Texture::applyFilter() const {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filter2GL(_filter.second, _filterMipMap.second));
 }
 
-void Texture::activate(const Shader& shader, const char* name, uint32_t unit) const {
+void Texture::use(const Shader& shader, const char* name, uint32_t unit) const {
     glActiveTexture(GL_TEXTURE0 + unit);
     glBindTexture(GL_TEXTURE_2D, _id);
     shader.set(name, static_cast<int32_t>(unit));
