@@ -1,4 +1,4 @@
-#include "engine/quad.hpp"
+#include "engine/geometry/quad.hpp"
 
 Quad::Quad(float size): _size(size) {
     _nVerts = 6;
