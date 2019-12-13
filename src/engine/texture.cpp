@@ -78,7 +78,7 @@ static uint32_t filter2GL(Texture::Filter filter, Texture::Filter mipMap) {
             case Texture::Filter::Linear: return GL_LINEAR_MIPMAP_LINEAR;
             default: return GL_LINEAR;
         };
-        case Texture::Filter::None: return GL_NEAREST;
+        case Texture::Filter::None:
         default: return GL_NEAREST;
     }
 }
