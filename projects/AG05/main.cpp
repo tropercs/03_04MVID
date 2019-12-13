@@ -7,7 +7,7 @@
 #include <iostream>
 
 #include "engine/texture.hpp"
-#include "engine/quad.hpp"
+#include "engine/geometry/quad.hpp"
 
 void handleInput() {
     std::vector<std::pair<int, int>> keys = Input::instance()->getKeys();

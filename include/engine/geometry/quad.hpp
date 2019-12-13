@@ -1,7 +1,7 @@
 #ifndef __QUAD_H__
 #define __QUAD_H__ 1
 
-#include "engine/geometry.hpp"
+#include "engine/geometry/geometry.hpp"
 
 //0 posiciones
 //1 uvs
