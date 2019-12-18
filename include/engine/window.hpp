@@ -1,6 +1,8 @@
 #ifndef __WINDOW_H__
 #define __WINDOW_H__
 
+#include <cstdint>
+
 class GLFWwindow;
 
 class Window {
