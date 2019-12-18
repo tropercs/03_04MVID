@@ -5,14 +5,24 @@ class GLFWwindow;
 
 class Window {
     public:
-        static Window* instance();
+        static Window* instance() {
+            static Window w;
+            return &w;
+        }
 
         bool alive() const;
         void frame() const;
 
-        bool keyPressed(int key);
+        void setWidth(uint32_t width) { _width = width; }
+        void setHeight(uint32_t height) { _height = height; }
+
+        uint32_t getWidth() const { return _width; }
+        uint32_t getHeight() const { return _height; }
+
+        bool keyPressed(int key) const;
 
         void setCaptureMode(bool toggle) const;
+
     private:
         Window();
         ~Window();
@@ -22,7 +32,9 @@ class Window {
         Window& operator=(const Window&) = default;
         Window& operator=(Window&&) = default;
 
-        GLFWwindow* window_;
+        GLFWwindow* _window;
+        uint32_t _width = 800;
+        uint32_t _height = 600;
 };
 
 #endif
