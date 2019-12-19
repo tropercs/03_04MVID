@@ -96,8 +96,6 @@ void render(const Geometry& object, const Geometry& light, const Shader& s_phong
 
     s_phong.set("viewPos", camera.getPosition());
 
-    s_phong.set("material.shininess", 32);
-
     s_phong.set("light.position", lightPos);
     s_phong.set("light.ambient", 0.1f, 0.1f, 0.1f);
     s_phong.set("light.diffuse", lightDiffuse);
@@ -105,6 +103,7 @@ void render(const Geometry& object, const Geometry& light, const Shader& s_phong
 
     t_albedo.use(s_phong, "material.diffuse", 0);
     t_specular.use(s_phong, "material.specular", 1);
+    s_phong.set("material.shininess", 32);
 
     object.render();
 }
