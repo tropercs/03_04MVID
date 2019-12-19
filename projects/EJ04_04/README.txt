@@ -1,0 +1,1 @@
+con las teclas q y w se selecciona el método de interpolación, se notan los cambios a simple vista y por linea de comandos sale cual es el método seleccionado

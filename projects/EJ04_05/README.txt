@@ -1,0 +1,1 @@
+La interpolación se controla con las teclas q y w
