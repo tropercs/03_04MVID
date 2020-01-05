@@ -1,0 +1,4 @@
+Tanto la posición de un vértice como su color son vectores de 3 elementos, al pasarle la posición del vértice como color lo pintará de un color correspondiente a su posición, 
+en este caso el vértice inferior izquierdo lo pinta negro porque sus valores son -0.5, -0.5, 0
+el vertice central lo pinta de verde porque su posicion es 0, 0.5, 0
+y el inferior derecho lo pinta rojo al ser su posicion 0.5, -0.5, 0
