@@ -12,8 +12,15 @@ Camera::Camera(float posX, float posY, float posZ, float upX, float upY, float u
     updateCameraVectors();
 }
 
-
 glm::mat4 Camera::getViewMatrix() const {
+    return glm::lookAt(_position, _position + _front, _up);
+}
+
+
+glm::mat4 Camera::getViewMatrix(bool usemylookat) const {
+    if (usemylookat) {
+        return mylookAt(_position, _position + _front, _up);
+    }
     return glm::lookAt(_position, _position + _front, _up);
 }
 
@@ -34,6 +41,33 @@ void Camera::updateCameraVectors() {
 
     _right = glm::normalize(glm::cross(_front, _worldUp));
     _up = glm::normalize(glm::cross(_right, _front));
+}
+
+glm::mat4 Camera::mylookAt(glm::vec3 posCamara, glm::vec3 objetivo, glm::vec3 up) const {
+    glm::mat4 matriz = glm::mat4(1.0f);
+    glm::mat4 mCamara = glm::mat4(1.0f);
+    mCamara[3][0] = -posCamara[0];
+    mCamara[3][1] = -posCamara[1];
+    mCamara[3][2] = -posCamara[2];
+    glm::vec3 derecha, arriba, direccion;
+    direccion = posCamara - objetivo;
+    direccion = glm::normalize(direccion);
+    derecha = glm::cross(up, direccion);
+    derecha = glm::normalize(derecha);
+    arriba = glm::cross(direccion, derecha);
+    arriba = glm::normalize(arriba);
+    matriz[0][0] = derecha[0];
+    matriz[1][0] = derecha[1];
+    matriz[2][0] = derecha[2];
+    matriz[0][1] = arriba[0];
+    matriz[1][1] = arriba[1];
+    matriz[2][1] = arriba[2];
+    matriz[0][2] = direccion[0];
+    matriz[1][2] = direccion[1];
+    matriz[2][2] = direccion[2];
+
+    matriz = matriz * mCamara;
+    return matriz;
 }
 
 void Camera::handleKeyboard(Movement direction, float dt) {
@@ -68,4 +102,6 @@ void Camera::handleMouseScroll(float yoffset) {
     if (_fov <= 1.0f) _fov = 1.0f;
     if (_fov >= 45.0f) _fov = 45.0f;
 }
+
+
 
